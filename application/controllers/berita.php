@@ -5,11 +5,11 @@ class berita extends CI_Controller {
 
 	public function index()
 	{
-		$this->load->view('berita_view');
+		$this->load->view('berita/view');
     }
     
     public function tambah()
 	{
-		$this->load->view('berita_tambah');
+		$this->load->view('berita/tambah');
 	}
 }
