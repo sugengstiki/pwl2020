@@ -521,3 +521,6 @@ $config['rewrite_short_tags'] = FALSE;
 | Array:		array('10.0.1.200', '192.168.5.0/24')
 */
 $config['proxy_ips'] = '';
+
+$config['javascript_location'] = 'http://localhost/ci/assets/js/jquery/';
+$config['javascript_ajax_img'] = 'images/ajax-loader.gif';
