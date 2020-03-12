@@ -1,23 +1,16 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><?=$title;?></title>
-		<?php echo $library_src;?>
-		<?php echo $script_head;?>
-</head>
-<body>
-    <h1><?=$heading;?></h1>
-		<div><?=$message;?></div>
-		<?php
+	<?php
+		//print_r($berita);
+		$template = array('table_open' => '<table>');
+		$this->table->set_template($template);
+		$this->table->set_heading('kode','judul','beritanya','gambarnya','aksi');
 		
 		foreach ($berita as $row)
 		{
-			echo $row->title;
-			echo $row->name;
-			echo $row->body;
+			$this->table->add_row($row->id,$row->title,$row->body,'','edit');
+			
 		}
-		?>
+		echo $this->table->generate();
+	?>
+    <p>isi berita</p>
 </body>
 </html>

@@ -9,22 +9,25 @@ class berita extends CI_Controller {
   }
 	
 	public function index()
-	{			
-		$this->load->library('javascript/jquery');
-		
+	{	
+		$this->load->library('table');
 		$data = array(
 			 'title' => 'My Title',
-			 'heading' => 'My Heading'
+			 'judul' => 'My Heading'
 		);
 		$data['message'] = 'My Message';
 
 		$data['berita'] = $this->berita_model->get();
 
+		$data['judul'] = 'Daftar Berita';
+		$this->load->view('header',$data);
 		$this->load->view('berita/view', $data);
   }
     
   public function tambah()
 	{
+		$data['judul'] = 'Tambah Berita';
+		$this->load->view('header',$data);
 		$this->load->view('berita/tambah');
 	}
 }
