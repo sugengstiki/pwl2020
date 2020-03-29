@@ -6,7 +6,13 @@
 		
 		foreach ($berita as $row)
 		{
-			$this->table->add_row($row->id,$row->title,$row->body,'','edit');
+			$this->table->add_row(
+				$row->id,
+				$row->title,
+				$row->body,
+				$row->picture,
+				anchor("berita/edit/$row->id",'Edit')
+			);
 			
 		}
 		echo $this->table->generate();

@@ -21,4 +21,14 @@ class Berita_model extends CI_Model {
     $query = $this->db->get('berita', 10);
     return $query->result();
   }
+	
+	public function simpan($data,$id = ''){
+    if($id == ''){
+        $this->db->insert('berita',$data);
+    } else {
+        $this->db->where('id',$id);
+        $this->db->update('berita',$data);  
+    }       
+	}
+
 }
