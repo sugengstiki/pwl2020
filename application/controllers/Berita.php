@@ -10,7 +10,7 @@ class Berita extends CI_Controller {
 	
 	public function index()
 	{	
-		//test
+		//test 123
 		$this->load->library('table');
 		$this->load->helper('url');
 		$data = array(
