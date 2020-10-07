@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class berita extends CI_Controller {
+class Berita extends CI_Controller {
 	public function __construct()
   {
     parent::__construct();
@@ -10,6 +10,7 @@ class berita extends CI_Controller {
 	
 	public function index()
 	{	
+		//test
 		$this->load->library('table');
 		$this->load->helper('url');
 		$data = array(
@@ -38,13 +39,13 @@ class berita extends CI_Controller {
 		$this->load->library('form_validation');
 		
 		$this->form_validation->set_rules('judulnya', 'Judul', 'required');
-    $this->form_validation->set_rules('beritanya', 'Berita', 'required',
+    	$this->form_validation->set_rules('beritanya', 'Berita', 'required',
             array('required' => '%s harus diisi.'));
-    $this->form_validation->set_rules('penulisnya', 'Nama Penulis', 
+    	$this->form_validation->set_rules('penulisnya', 'Nama Penulis', 
                                       'required');
 		$this->form_validation->set_rules('gambarnya', 'Gambar','callback_cek_upload');
 		if ($this->form_validation->run() == FALSE)
-    {
+    	{
 
 			$data = array(
 				 'title' => 'My Title',
